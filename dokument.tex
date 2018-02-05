@@ -17,6 +17,7 @@
 \usepackage{xparse,eqparbox,amsmath}
 \usepackage{color}
 
+
 %-------Definition of \signature--
  \def\signature#1#2#3{{\hskip#1in{\hbox to #2in%
 {\leaders\hbox to .00625in{\hfil.\hfil}\hfill}}%
@@ -202,7 +203,7 @@ Harmoniczna jest funkcją, która spełnia równanie Laplace'a:
 \begin{equation}
 \Delta^{2}f=0
 \end{equation}
-Jak sama nazwa wskazuje, harmoniki sferyczne są nieskończonym zbiorem funkcji zdefiniowanych w sferze. Wynikają one z rozwiązania części kątowej równania Laplace'a we współrzędnych sferycznych z wykorzystaniem separacji zmiennych. The spherical harmonic basis functions derived in this fashion take on complex values, but a complementary, strictly real valued, set of harmonics can also be defined. Ponieważ w grafice komputerowej zazwyczaj spotykamy się tylko z funkcjami o wartościach rzeczywistych, ograniczamy naszą dyskusję do wartości rzeczywistych. \\
+Jak sama nazwa wskazuje, harmoniki sferyczne są nieskończonym zbiorem funkcji zdefiniowanych w sferze. Wynikają one z rozwiązania części kątowej równania Laplace'a we współrzędnych sferycznych z wykorzystaniem separacji zmiennych. \textcolor{red}{The spherical harmonic basis functions derived in this fashion take on complex values, but a complementary, strictly real valued, set of harmonics can also be defined.} Ponieważ w grafice komputerowej zazwyczaj spotykamy się tylko z funkcjami o wartościach rzeczywistych, ograniczamy naszą dyskusję do wartości rzeczywistych. \\
 
 Jeśli reprezentujemy wektor kierunkowy $\vec{\omega}$ używając standardowej parametryzacji sferycznej,
 \begin{equation}
@@ -284,7 +285,7 @@ gdzie współczynnik $f$ jest obliczony przez rzutowanie $f$ funkcję podstawow�
 \begin{equation}
 f^{m}_{l}=\int_{\Omega_{4\pi}}^{}y^{m}_{l}(\vec{\omega})f(\vec{\omega})d\vec{\omega}
 \end{equation}
-Podobnie jak w przypadku szeregu Fouriera, rozszerzenie to jest prawdziwe, kiedy $l$ dąży do nieskończoności, wymaga to jednak nieskończonej liczby współczynników. Ograniczając liczbę pasm do $l=n-1$, zachowujemy tylko częstotliwość funkcji do pewnego momentu, uzyskując przybliżone pasma funkcji $\tilde{f}$ n-tego rzędu pierwotnej funkcji $f$:
+Podobnie jak w przypadku szeregu Fouriera, rozszerzenie to jest prawdziwe, kiedy $l$ dąży do nieskończoności, wymaga to jednak nieskończonej liczby współczynników. Ograniczając liczbę pasm do $l=n-1$, zachowujemy tylko częstotliwość funkcji do pewnego momentu, uzyskując przybliżone pasma funkcji~$\tilde{f}$ n-tego rzędu pierwotnej funkcji $f$:
 \begin{equation}
 \tilde{f}(\vec{\omega})=\sum_{l=0}^{n-1}\sum_{m=-l}^{l}y^{m}_{l}(\vec{\omega})f^{m}_{l}
 \end{equation}
@@ -298,13 +299,56 @@ Często wygodnie jest przeformułować schemat indeksowania tak aby wykorzystywa
 
 \subsection{Parametryzacja Modify Funny Hills}
 
-opisać
+Parametryzacja Funny-Hills jest sposobem na zmniejszenie liczby współrzędnych, co znacznie upraszcza obliczenia dynamiczne i jest to powód, dla którego łatwiej jest z niej korzystać niż zużycia harmonik sferycznych do opisu bardzo zdeformowanych kształtów.
 
-zrobić rysuneczki z przykładowymi kształtami itp ..
+Zgodnie z tą ideą kształt rozszczepialnego jądra przedstawiliśmy za pomocą wielomianu Lagrange'a $P_{n}$:
+\begin{equation} \label{eq:MFH1}
+\tilde{\rho}^{2}_{s}(z)=R_{0}^{2}\sum_{n=0}^{\infty}\alpha_{n}P_{n}\left(\frac{z-z_{sh}}{z_{0}}\right),
+\end{equation}
+gdzie $\tilde{\rho}_{s}(z)$ jest odległością od symetrii osi $z$ do powierzchni jądra. Lewa i prawa strona jądra znajduje się w punkcie $z_{sh}-z_{0}$ oraz $z_{0}+z_{sh}$ co prowadzi do następujących zależności między współczynnikiem rozszerzalności $\alpha_{n}$:
+\begin{equation} \label{eq:MFH2}
+\alpha_{0}=-\sum_{n=2,4,}^{\infty}\alpha_{n}, \qquad \alpha_{1}=-\sum_{n=3,5,}^{\infty}\alpha_{n}.
+\end{equation}
+Przesunięcie $z_{sh}$ współrzędnej $z$, która pojawia się w równaniu~\ref{eq:MFH1} określa, że centrum masy jądra znajduje się w $z=0$ i jest zadane równaniem:
+\begin{equation} \label{eq:MFH3}
+z_{sh}=-\frac{1}{3}\frac{\alpha_{1}}{\alpha_{0}}z_{0}=-\frac{2}{9}\frac{\alpha_{1}}{\alpha_{0}^{2}}R_{0}.
+\end{equation}
+$R_{0}$ w równaniu~\ref{eq:MFH1} jest parametrem promienia odpowiadającego sferycznemu jądru o tej samej objętości. Forma ta odpowiada $\alpha_{0}=-\alpha_{2}=\frac{2}{3}$. Spłaszczony kształt uzyskujemy przy $\alpha_{2}<-\frac{2}{3}$ a wydłużony przy $-\frac{2}{3}<\alpha_{2}<0$. Dla $\alpha_{2}$ dążącego do zera, jądro staje się nieskończenie długie. Zachowanie objętości skutkuje więc:
+\begin{equation} \label{eq:MFH4}
+z_{0}=\frac{2}{3}\frac{R_{0}}{\alpha_{0}},
+\end{equation}
+gdzie $z_{0}$ jest połową odległości od zdeformowanego jądra. Należy zauważyć, że parametr wydłużenia $c$ jest równy połowie długości jądra w jednostkach $R_{0}$:
+\begin{equation} \label{eq:MFH5}
+c=\frac{z_{0}}{R_{0}}=\frac{2}{3\alpha_{0}}.
+\end{equation}
+Parametryzacja~\ref{eq:MFH1} jest bardzo ogólna, ponieważ dowolny kształt zdeformowanego jądra może być łatwo rozszerzony w szereg wielomianów Lagrange'a. Dla $\lambda\leq4$ równanie~\ref{eq:MFH1} jest równoznaczne z definicją Funny-Hills
+\begin{equation} \label{eq:MFH6}
+\tilde{\rho}^{2}_{s}(z)=R_{0}^{2}c^{2}(1-u^{2})(A+\alpha u+Bu^{2}),
+\end{equation}
+dla wartości pozytywnych parametru $B$ (tzw. szyjki), natomiast dla $B<0$ jądro w kształcie diamentu jest opisane
+\begin{equation} \label{eq:MFH7}
+\tilde{\rho}^{2}_{s}(z)=R_{0}^{2}c^{2}(1-u^{2})(A+\alpha u)e^{(Bc^{3}u^{2})},
+\end{equation}
+gdzie znów $u=z-z_{sh}/z_{0}$.
+
+Problem, który pojawia się w parametryzacjach (\ref{eq:MFH1}) oraz (\ref{eq:MFH6})-(\ref{eq:MFH7}) polega na tym, że w niektórych kombinacjach parametrów odkształcenia pojawiają się dodatkowe \textcolor{red}{roots} między wierzchołkami $(u=\pm1)$ to znaczy dla niektórych regionów wartości $z$, pierwiastek odległości $\tilde{\rho}^{2}_{s}(z)$ jest ujemny, co jest oczywiście niefizyczne.
+
+Powyższe rozważania i staranne badania powierzchni potencjału energetycznego \textcolor{red}{liquid-drop} w jądrach z różnych regionów masowych doprowadziły nas do zaproponowania następującej parametryzacji:
+\begin{equation}
+\tilde{\rho}^{2}_{s}(z)=\frac{R_{0}^{2}}{c f(a,B)}(1-u^{2})(1+\alpha u-Be^{-a^{2}u^{2}})
+\end{equation}
+gdzie $u$ i $z_{0}$ są zdefiniowane tak jak wcześniej a funkcja
+\begin{equation}
+f(a,B)=1-\frac{3B}{4a^{2}}\left[e^{-a^{2}}+\sqrt{\pi}(a-\frac{1}{2a})Erf(a)\right]
+\end{equation}
+co zapewnia normalizację objętości zdeformowanego kształtu. Kształt zdefiniowany w ten sposób jest całkowicie wolny od niepotrzebnych zer w przedziale $u\in (-1,1)$ i poprawnie opisuje diamentopodobne jak i ''szyjkowe'' kształty.
+
+\bigskip
+\textcolor{red}{zrobić rysuneczki z przykładowymi kształtami itp ..}
 
 \subsection{Przeliczanie jednego w drugą}
 
-Wziąć z pracy Mollera ze str 4 (rozdział Multipole expansion) - to jest detoda za pomocą całki
+Wziąć z pracy Mollera ze str 4 (rozdział Multipole expansion) - to jest metoda za pomocą całki
 
 napisać, że można też to zrobić metodą najmniejszych kwadratów
 
