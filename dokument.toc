@@ -12,8 +12,8 @@
 \contentsline {subsection}{\numberline {3.3}Przeliczanie jednego w drug\IeC {\k a}}{8}
 \contentsline {section}{\numberline {4}Wyniki}{8}
 \contentsline {subsection}{\numberline {4.1}efekt przeliczania u nas}{8}
-\contentsline {subsection}{\numberline {4.2}wyniki wyznaczania mas}{8}
-\contentsline {subsubsection}{\numberline {4.2.1}Uran}{8}
-\contentsline {subsubsection}{\numberline {4.2.2}Radon}{8}
-\contentsline {subsubsection}{\numberline {4.2.3}Z=123}{8}
-\contentsline {section}{\numberline {5}Wnioski}{8}
+\contentsline {subsection}{\numberline {4.2}wyniki wyznaczania mas}{9}
+\contentsline {subsubsection}{\numberline {4.2.1}Uran}{9}
+\contentsline {subsubsection}{\numberline {4.2.2}Radon}{9}
+\contentsline {subsubsection}{\numberline {4.2.3}Z=123}{9}
+\contentsline {section}{\numberline {5}Wnioski}{9}

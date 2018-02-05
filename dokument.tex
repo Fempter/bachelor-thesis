@@ -334,14 +334,33 @@ gdzie znów $u=z-z_{sh}/z_{0}$.
 Problem, który pojawia się w parametryzacjach (\ref{eq:MFH1}) oraz (\ref{eq:MFH6})-(\ref{eq:MFH7}) polega na tym, że w niektórych kombinacjach parametrów odkształcenia pojawiają się dodatkowe \textcolor{red}{roots} między wierzchołkami $(u=\pm1)$ to znaczy dla niektórych regionów wartości $z$, pierwiastek odległości $\tilde{\rho}^{2}_{s}(z)$ jest ujemny, co jest oczywiście niefizyczne.
 
 Powyższe rozważania i staranne badania powierzchni potencjału energetycznego \textcolor{red}{liquid-drop} w jądrach z różnych regionów masowych doprowadziły nas do zaproponowania następującej parametryzacji:
-\begin{equation}
+\begin{equation} \label{eq:MFH8}
 \tilde{\rho}^{2}_{s}(z)=\frac{R_{0}^{2}}{c f(a,B)}(1-u^{2})(1+\alpha u-Be^{-a^{2}u^{2}})
 \end{equation}
 gdzie $u$ i $z_{0}$ są zdefiniowane tak jak wcześniej a funkcja
-\begin{equation}
+\begin{equation} \label{eq:MFH9}
 f(a,B)=1-\frac{3B}{4a^{2}}\left[e^{-a^{2}}+\sqrt{\pi}(a-\frac{1}{2a})Erf(a)\right]
 \end{equation}
 zapewnia normalizację objętości zdeformowanego kształtu. Kształt zdefiniowany w ten sposób jest całkowicie wolny od niepotrzebnych zer w przedziale $u\in (-1,1)$ i poprawnie opisuje diamentopodobne jak i ''szyjkowe'' kształty.
+
+Znaczenie parametrów deformacji w równaniu~\ref{eq:MFH8} ma podobne znaczenie co w parametryzacji Funny-Hill: $c$ opisuje wydłużenie kształtu, $B$ formowanie ''szyjki'', z kolei $\alpha$ odpowiada za \textcolor{red}{left-right assymetry}. Szerokość ''szyjki'' $a$ jest tutaj stała ponieważ dla małych wartości bezwzględnych $B$, kształt jądra jest praktycznie niezależny od $a$. Minimalizację energii wzłóż ścieżek rozszczepienia daje parametr $a=1$, ale ta wartość nie jest kluczowa. Podobne wartości energii dla stałych wydłużeń $c$ (lecz dla różnych wartości $B$) uzyskuje się dla $0.8\leq a \leq 2$.
+
+W związku z tym, wygodniej jest wprowadzić parametr szyjki $h$, który jest niczym innym jak kombinacją liniową parametrów $c$ i $B$
+\begin{equation}
+h=B-(c-1)
+\end{equation}
+Linia $h=0$ w płaszczyznie deformacji $(c,h)$ średniej ścieżce \textcolor{red}{liquid drop} do 	rozszczepienia. Oczywiście nasze parametry $B$ i $h$ nie odpowiadają dokłądnie tym z \textcolor{red}{Ref. 1} ale mają podobne znaczenie.
+
+Parametr $z_{sh}$, który jest związany z centrum masy jest uzyskiwany z warunku ośrodka masowego:
+\begin{equation}
+z_{sh}=-\frac{4}{15}\alpha \frac{z_{0}}{f(a,B)}.
+\end{equation}
+Punkt rozszczepienia $z_{sc}=0$ jest osiągany przy $B=0$ dla kształtów symetrycznych $(\alpha=0)$ oraz
+\begin{equation}
+B\approx 1-\frac{\alpha^{2}}{4a^{2}} \quad \textcolor{red}{\textrm{at}} \quad u_{sc}\approx \frac{-\alpha}{2B_{sc}}
+\end{equation}
+przy uwzględnieniu asymetrycznych kształtów $\alpha\neq 0$.
+
 
 \bigskip
 \textcolor{red}{zrobić rysuneczki z przykładowymi kształtami itp ..}
