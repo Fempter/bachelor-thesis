@@ -1,0 +1,340 @@
+\documentclass[polish]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{polski}
+\usepackage[polish]{babel}
+\usepackage[margin=3cm]{geometry}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage[none]{hyphenat}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{titlesec}
+\usepackage{csquotes}
+\usepackage{indentfirst}
+\usepackage{datetime}
+\usepackage{mathtools}
+\usepackage{xparse,eqparbox,amsmath}
+\usepackage{color}
+
+%-------Definition of \signature--
+ \def\signature#1#2#3{{\hskip#1in{\hbox to #2in%
+{\leaders\hbox to .00625in{\hfil.\hfil}\hfill}}%
+ \par\hskip#1in#3\vskip1cm}}
+%------------------------------
+% https://tex.stackexchange.com/a/34412/5764
+\makeatletter
+\NewDocumentCommand{\eqmathbox}{o O{c} m}{%
+	\IfValueTF{#1}
+	{\def\eqmathbox@##1##2{\eqmakebox[#1][#2]{$##1##2$}}}
+	{\def\eqmathbox@##1##2{\eqmakebox{$##1##2$}}}
+	\mathpalette\eqmathbox@{#3}
+}
+\makeatother
+
+\newcommand{\ts}{\quad}
+
+%-------Big chapter letters--
+\titleformat{\chapter}[display]
+  {\huge\headingfont}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
+%------------------------------
+
+\frenchspacing
+
+\numberwithin{equation}{section}
+
+\begin{document}
+
+
+\begin{titlepage}
+	\centering
+	\begin{figure}[t]
+	\centering
+%	\includegraphics[width=0.25\textwidth]{logo_uz}
+	\end{figure}
+	\vspace{1cm}
+	{\scshape\huge Uniwersytet Zielonogórski \par}
+	{\scshape\LARGE Wydział Fizyki i Astronomii \par}
+	{\scshape\Large Instytut Fizyki \par}
+	\vspace{2.5cm}
+	{\Large\bfseries Wyznaczanie mas dla stanów podstawowych ciężkich jąder atomowych w ramach modelu makroskopowo-mikroskopowego z wykorzystaniem parametryzacji modified Funny-Hills. \par}
+	\vspace{1cm}
+	{\Large\textbf{Dawid Haniewicz} \par}
+	\vspace{2cm}
+	Praca inżynierska napisana \par
+	pod przewodnictwem: dra~Piotra \textsc{Jachimowicza} \par
+	\vspace{1.5cm}
+	{Kierunek: \textsc{\textbf{Fizyka Techniczna}} \par}
+	{Specjalność: \textsc{\textbf{Fizyka Medyczna}} \par}
+	\vspace{1.5cm}
+	Akceptacja promotora: \par
+	\vspace{0.5cm}
+	\signature{0}{1.8}
+	\vfill
+% Bottom of the page
+	{\large Zielona Góra, \the\year \par}
+\thispagestyle{empty}
+\end{titlepage}
+
+\setcounter{page}{2}
+
+\clearpage
+\tableofcontents
+\clearpage
+
+%\chapter{Rozdział I}
+
+\section{Wprowadzenie}
+
+Właściwy opis struktur i kształtów jąder atomowych jest bardzo ważny. Wiele jąder atomowych, w szczególności tych ciężkich wykazuje deformacje. Są to najczęściej deformacje kwadrupolowe, heksadekapolowe a nawet oktupolowe.
+Istnieją również możliwości przewidywania kształtów o nieosiowej deformacji kwadrupolowej lecz eksperymentalnie nie są one dobrze sprawdzone.
+
+bla bla bla
+
+
+\section{Model mikroskopowo-makroskopowy}
+
+
+Energia potencjalna (masa) jądra atomowego obliczana jest w ramach podejścia makroskopowo
+-mikroskopowego. Zgodnie z nim energia (masa) jądra składa się z dwóch części, makroskopowej $E\textsubscript{macr}$,
+zmieniającej się gładko przy przejściu od jądra do jądra, oraz silnie fluktuującej poprawki 
+do części makroskopowej: $E\textsubscript{micr}$, ujmującej efekty powłokowe wynikające z kwantowej natury jądra atomowego: 
+
+\begin{equation}
+E\textsubscript{mm}(Z,N,\beta_{\lambda \mu}) = E\textsubscript{macr}(Z,N,\beta_{\lambda \mu}) + E\textsubscript{micr}(Z,N,\beta_{\lambda \mu}).
+\end{equation}
+
+Każda ze wspomnianych części zależna jest od liczby atomowej $Z$, liczby neutronów $N$ oraz kształtu (deformacji) nuklidu $\beta_{\lambda \mu}$.
+
+\subsection{Część makroskopowa energii}
+Gładka (makroskopowa) część masy jądra wyznaczana jest w ramach modelu kroplowego Yukawa-plus exponential [] 
+mającego w przypadku jąder parzysto-parzystych następującą formę:
+
+\begin{equation} \label{Eq:Yukawa_model}
+\begin{gathered}
+M_{makr}(Z,N,\beta^0_{\lambda})=M_{H}Z+M{n}N-a_{V}(1-\kappa_{V}I^2)A+a_{s}(1-\kappa_{s}I^2)A^{2/3}B_{1}(\beta^{0}_{\lambda}) \\
++a_{0}A^{0}+c_{1}Z^{2}A^{-1/3}B_{3}(\beta^{0}_{\lambda})-c_{4}Z^{4/3}A^{-1/3} \\
++f(k_{F}r_{r})Z^{2}A^{-1}-c_{a}(N-Z)-a_{el}Z^{2.39}
+\end{gathered}
+\end{equation}
+gdzie $M_{H}$ to masa atomu wodoru, $M_{n}$ - masa neutronu, parametr $I=(N-Z)/A$ wyznacza względny nadmiar neutronów nad protonami, 
+natomiast $A=Z+N$ to liczba masowa.
+Funkcje $B_{1}(\beta_{\lambda})$ i $B_{3}(\beta_{\lambda})$ opisują odpowiednio zależność: członu powierzchniowego i członu kulombowskiego
+od deformacji jądra:
+\begin{gather}
+B_{1}=\frac{A^{-2/3}}{8\pi^{2}r^{2}_{0}a^{4}}\iint_V\left(2-\frac{r_{12}}{a}\right)\frac{e^{-r_{12}/a}}{r_{12}/a}d^{3}r_{1}d^{3}r_{2} \\
+B_{3}=\frac{15}{32\pi^{2}}\frac{A^{-5/3}}{r^{5}_{0}}\iint_V\frac{1}{r_{12}}\left[1-\left(1+\frac{1}{2}\frac{r_{12}}{a_{den}}\right)e^{-r_{12}/a_{den}}\right]d^{3}r_{1}d^{3}r_{2},
+\end{gather}
+
+
+gdzie $r_{12}=\left|\vec{r_{1}}-\vec{r_{2}}\right|$ jest odległością pomiędzy oddziałującymi elementami objętości 
+wyznaczanymi przez wektory $\vec{r_{1}}$ i $\vec{r_{2}}$. Funkcje te dobrane są w taki sposób, że dla
+dla kształtu sferycznego i przy założeniu ostrego brzegu powierzchni jądra ($a=0$ oraz $a_{den}=0$), są równe 1.
+Współczynniki $c_{1}$ i $c_{4}$ pojawiające się we wzorze (\ref{Eq:Yukawa_model}) zdefiniowane są w następujący sposób:
+\begin{equation}
+c_{1}=\frac{3}{5}\frac{e^{2}}{r_{0}}, \qquad
+c_{4}=\frac{5}{4}\left(\frac{3}{2\pi}\right)^{2/3}c_{1},
+\end{equation}
+gdzie $e$ to elementarny ładunek elektryczny a $r_{0}$ opisuje promień jądra. 
+Funkcja $f(k_{F}r_{p})$ będąca tzw. czynnikiem postaci zdefiniowana jest jako:
+\begin{equation}
+f(k_{F}r_{p})--\frac{1}{8}\frac{e^{2}r^{2}_{p}}{r^{3}_{0}}\left[\frac{145}{48}-\frac{327}{2880}(k_{F}r_{p})^{2}+\frac{1527}{1209600}(k_{F}r_{p})^{4}\right],
+\end{equation}
+gdzie $k_{F}$ to długość wektora falowego Fermiego:
+\begin{equation}
+k_{F}=\left(\frac{9\pi Z}{4A}\right)^{1/3}r^{-1}_{0},
+\end{equation}
+natomiast $r_{p}$ jest średnią kwadratową promienia protonu. 
+
+
+tutaj wypisać pozostałe stałe i podać, że pochodzą od fitu do mas z 2001 r.
+
+====================================
+
+
+
+
+Ostatnim terminem w Eq. () opisuje energię wiązania elektronów a $a_{V}$,$\kappa_{V}$,$a_{s}$,$\kappa_{s}$,$s_{0}$,$c_{a}$ są parametrami regulującymi. A zatem, tylko dwa z tych parametrów ($a_{s}$ i $\kappa_{s}$) okazują się być zależnymi od deformacji. Pozostałe cztery parametry pozostają niezależne od kształtu jądra atomowego.
+
+\subsection{Część mikroskopowa energii}
+Mikroskopowa część energii składa się z korekcji powłoki i łączenia części makroskopowej:
+\begin{equation}
+E_{micr}=E^{corr}_{sh}+E^{corr}_{pair}
+\end{equation}
+
+Korekcje te są sumą wkładu neutronów i protonów, policzonych oddzielnie. Dla danego jądra, energia mikroskopowa z pojedynczej cząstki daje wahania energii potencjalnej jako funkcja protonów, $Z$, neutronów, $N$ oraz deformacji $\beta_{\lambda}$ dookoła gładkiego trendu poprzez makroskopową część.
+
+liczona jest w oparciu o potencjał Woodsa-Saxona ...
+
+\subsubsection{Potencjał Woodsa-Saxona}
+
+W teorii pola potencjałem Woodsa-Saxona opisujemy potencjał nukleonów (protonów i neutronów) wewnątrz jądra atomowego. Wykorzystuje się go do opisania w przybliżeniu sił przyłożonych do atomu w modelu powłokowym dla struktury jądra atomowego.
+
+Potencjał w funkcji odległości $r$ od środka atomu przedstawia się następująco:
+\begin{equation}
+V(r)=-\frac{V_{0}}{1+e^{\frac{r-R}{a}}}
+\end{equation},
+gdzie $V_{0}$ opisuje wielkość potencjału, $a$ jest grubością powierzchni atomu, a $R=r_{0}A^{1/3}$ jest promieniem atomu, dla $r_{0}=1.25 fm$ oraz liczby atomowej $A$. 
+
+\subsubsection{Poprawka powłokowa}
+Korekcja powłoki to oscylacje w rozkładzie poziomów pojedynczej cząstki dla średniego rozkładu tych poziomów. Korekcja energii jądra jest różnicą dwoma tymi energiami: jedna kiedy posiada powłokę a druga kiedy jej nie posiada. Możemy zauważyć, że poziomy Fermiego są położone powyżej zamkniętej powłoki, jądra posiada więcej wiązań niż średnia, podczas gdy ma mniej wiązań niż średnia gdy poziom jest niżej. 
+
+\subsubsection{Poprawka pairing}
+
+na początek cztery równania BCS oraz wzór na $E_{BCS}$
+\begin{equation}
+E_{BCS}=2\sum_{\nu>0}^{}\epsilon_{\nu}v^{2}_{\nu}-\frac{\Delta^{2}}{G}-G\sum_{\nu>0}^{}v^{4}_{\nu}
+\end{equation}
+
+\section{Parametryzacja kształtu jądra atomowego}
+
+\subsection{Harmoniki sferyczne}
+
+Harmoniki sferyczne stanowią podstawę do reprezentowania funkcji na sferze. Są one analogią do sferycznego opisu jednowymiarowego szeregu Fouriera. Harmoniki sferyczne pojawiają się w wielu zagadnieniach fizyki, począwszy od opisu konfiguracji elektronowej w atomie, aż po opis pól magnetycznych i grawitacyjnych planet. Pojawiają się one również w rozwiązaniu równania Schr\"{o}dingera dla współrzędnych sferycznych. Harmoniki sferyczne są więc często omawiane w podręcznikach z tych dziedzin fizyki [MacRobert and Sneddon, 1967; Tinkham,
+2003].
+
+Harmoniki sferyczne mają również bezpośrednie zastosowanie w graficie komputerowej. Transport światła obejmuje wiele wielkości zdefiniowanych w sferycznych i półkulistych domenach, dzięki czemu harmoniki sferyczne stanowią naturalną podstawę do reprezentowania tych funkcji.
+
+Pierwsze efekty zastosować harmonik sferycznych w grafice komputerowej zostały zaprezentowane w pracach Cabrala [1987] i Silliona [1991]. Ostatnio w literaturze graficznej pojawiło się kilka dogłębnych prezentacji [Ramamoorthi, 2002; Green, 2003; Wyman, 2004; Sloan, 2008].
+
+\bigskip
+Harmoniczna jest funkcją, która spełnia równanie Laplace'a:
+\begin{equation}
+\Delta^{2}f=0
+\end{equation}
+Jak sama nazwa wskazuje, harmoniki sferyczne są nieskończonym zbiorem funkcji zdefiniowanych w sferze. Wynikają one z rozwiązania części kątowej równania Laplace'a we współrzędnych sferycznych z wykorzystaniem separacji zmiennych. The spherical harmonic basis functions derived in this fashion take on complex values, but a complementary, strictly real valued, set of harmonics can also be defined. Ponieważ w grafice komputerowej zazwyczaj spotykamy się tylko z funkcjami o wartościach rzeczywistych, ograniczamy naszą dyskusję do wartości rzeczywistych. \\
+
+Jeśli reprezentujemy wektor kierunkowy $\vec{\omega}$ używając standardowej parametryzacji sferycznej,
+\begin{equation}
+\vec{\omega}=\left(\sin\theta \cos\phi, \sin\theta \sin\phi, \cos\theta\right)
+\end{equation}
+wówczas funkcje rzeczywiste harmonicznych sferycznych będą zdefiniowane następująco,
+\begin{equation}
+\mathrm{y}^{m}_{l}\left(\theta,\phi\right)=
+\begin{dcases}
+\sqrt{2}K^{m}_{l}\cos{\left(m\phi\right)}P^{m}_{l}\left(\cos\theta\right) & \quad \text{if } m>0,\\
+K^{0}_{l}P^{0}_{l}\left(\cos\theta\right) & \quad \text{if } m=0,\\
+\sqrt{2}K^{m}_{l}\sin{\left(-m\phi\right)}P^{-m}_{l}\left(\cos\theta\right) & \quad \text{if } m<0,
+\end{dcases}
+\end{equation}
+gdzie $K^{m}_{l}$ jest stałą normalizacyjną
+\begin{equation}
+K^{m}_{l}=\sqrt{\frac{\left(2l+1\right)}{4\pi}\frac{\left(l-|m|\right)!}{\left(l+|m|\right)!}}
+\end{equation}
+a $P^{m}_{l}$ są powiązanymi wielomianami Legendre'a. Istnieje wiele możliwości zdefiniowania wielomianów Legendre'a lecz najbardziej numerycznym sposobem jest użycie relacji cyklicznych [Press, 1992]:
+\begin{align}
+P^{0}_{0}(z)=& 1, \\
+P^{m}_{m}(z)=& (2n-1)!!(1-z^{2})^{m/2}, \\
+P^{m}_{m+1}(z)=& z(2n-1)!!P^{m}_{m}(z), \\
+P^{m}_{l}(z)=& \frac{z(2l-1)}{l-m}P^{m}_{l-1}(z)-\frac{(l+m-1)}{l-m}P^{m}_{l-2}(z)
+\end{align}
+Funkcje podstawowe są indeksowane według dwóch stałych podstawowych, rząd $l$, oraz stopień $m^2$. Spełniają one ograniczenie, że $l\in\mathbb{N}$ oraz $-l\le m\le l$; stąd istnieją funkcje podstawowe $2l+l$ rzędu $l$.
+
+Rząd $l$ określa również częstotliwość funkcji podstawowych w sferze. Harmoniki sferyczne mogą być też przedstawione jako funkcje trygonometryczne we współrzędnych sferycznych $\theta$ i $\phi$ oraz we współrzędnych kartezjańskich $x$, $y$ i $z$. Używając reprezentacji kartezjańskiej, każde $\mathrm{y}^{m}_{l}$ dla stałej $l$ odpowiada wielomianowi o maksymalnym rzędzie $l$ dla $x$, $y$ i $z$. \\
+
+Kilka pierwszych harmonik sferycznych, zarówno w reprezentacji sferycznej jak i kartezjańskiej prezentują się następująco:
+\[
+\renewcommand{\arraystretch}{2.5}
+\begin{array}{ r r }
+& \eqmakebox[c1]{} \ts 
+\eqmakebox[c2][l]{\textbf{Sferyczne}} \hspace{1cm}
+\eqmakebox[c3][l]{\textbf{Kartezjańskie}} \\
+l = 0 & \eqmathbox[c1][r]{y_0^0(\theta, \phi) =} \hspace{1cm}
+\eqmathbox[c2][l]{\sqrt{\dfrac{1}{4 \pi}}} \hspace{1cm} 
+\eqmathbox[c3][l]{\sqrt{\dfrac{1}{4 \pi}},} \\
+l = 1 & \left\{\begin{array}{ @{} r @{} }
+\eqmathbox[c1][r]{y_1^{-1}(\theta, \phi) =} \hspace{1cm}
+\eqmathbox[c2][l]{\sqrt{\dfrac{3}{4 \pi}} \sin \phi \sin \theta} \hspace{1cm} 
+\eqmathbox[c3][l]{\sqrt{\dfrac{3}{4 \pi}} x,} \\
+\eqmathbox[c1][r]{y_1^0(\theta, \phi) =} \hspace{1cm} 
+\eqmathbox[c2][l]{\sqrt{\dfrac{3}{4 \pi}} \cos \theta} \hspace{1cm}
+\eqmathbox[c3][l]{\sqrt{\dfrac{3}{4 \pi}} z,} \\
+\eqmathbox[c1][r]{y_1^1(\theta, \phi) =} \hspace{1cm} 
+\eqmathbox[c2][l]{\sqrt{\dfrac{3}{4 \pi}} \cos \phi \sin \theta} \hspace{1cm}
+\eqmathbox[c3][l]{\sqrt{\dfrac{3}{4 \pi}} y,}
+\end{array}\right.\kern-\nulldelimiterspace \\
+l = 2 & \left\{\begin{array}{ @{} r @{} }
+\eqmathbox[c1][r]{y_2^{-2}(\theta, \phi) =} \hspace{1cm}
+\eqmathbox[c2][l]{\sqrt{\dfrac{15}{4 \pi}} \sin \phi \cos \phi \sin^2 \theta} \hspace{1cm}
+\eqmathbox[c3][l]{\sqrt{\dfrac{15}{4 \pi}} x y,} \\
+\eqmathbox[c1][r]{y_2^{-1}(\theta, \phi) =} \hspace{1cm}
+\eqmathbox[c2][l]{\sqrt{\dfrac{15}{4 \pi}} \sin \phi \sin \theta \cos \theta} \hspace{1cm} 
+\eqmathbox[c3][l]{\sqrt{\dfrac{15}{4 \pi}} y z,} \\
+\eqmathbox[c1][r]{y_2^0(\theta, \phi) =} \hspace{1cm}
+\eqmathbox[c2][l]{\sqrt{\dfrac{5}{16 \pi}} (3 \cos^2 \theta - 1)} \hspace{1cm}
+\eqmathbox[c3][l]{\sqrt{\dfrac{5}{16 \pi}} (3 z^2 - 1),} \\
+\eqmathbox[c1][r]{y_2^1(\theta, \phi) =} \hspace{1cm}
+\eqmathbox[c2][l]{\sqrt{\dfrac{15}{4 \pi}} \cos \phi \sin \theta \cos \theta} \hspace{1cm}
+\eqmathbox[c3][l]{\sqrt{\dfrac{15}{8 \pi}} x z,} \\
+\eqmathbox[c1][r]{y_2^2(\theta, \phi) =} \hspace{1cm} 
+\eqmathbox[c2][l]{\sqrt{\dfrac{15}{16 \pi}} (\cos^2 \phi - \sin^2 \phi) \sin^2 \theta} \hspace{1cm}
+\eqmathbox[c3][l]{\sqrt{\dfrac{15}{32 \pi}} (x^2 - y^2).}
+\end{array}\right.\kern-\nulldelimiterspace \\
+\end{array}
+\]
+Harmoniki przedstawione na rysunkach poniżej.
+
+
+\bigskip
+Harmoniki sferyczne definiują \textcolor{red}{complete basis} na sferze. Zatem dowolna funkcja sferyczna o wartościach rzeczywistych $f$ może być rozszerzona jako liniowa kombinacja funkcji bazowych:
+\begin{equation}
+f(\vec{\omega})=\sum_{l=0}^{\infty}\sum_{m=-l}^{l}y^{m}_{l}(\vec{\omega})f^{m}_{l}
+\end{equation}
+gdzie współczynnik $f$ jest obliczony przez rzutowanie $f$ funkcję podstawową $y^{m}_{l}$:
+\begin{equation}
+f^{m}_{l}=\int_{\Omega_{4\pi}}^{}y^{m}_{l}(\vec{\omega})f(\vec{\omega})d\vec{\omega}
+\end{equation}
+Podobnie jak w przypadku szeregu Fouriera, rozszerzenie to jest prawdziwe, kiedy $l$ dąży do nieskończoności, wymaga to jednak nieskończonej liczby współczynników. Ograniczając liczbę pasm do $l=n-1$, zachowujemy tylko częstotliwość funkcji do pewnego momentu, uzyskując przybliżone pasma funkcji $\tilde{f}$ n-tego rzędu pierwotnej funkcji $f$:
+\begin{equation}
+\tilde{f}(\vec{\omega})=\sum_{l=0}^{n-1}\sum_{m=-l}^{l}y^{m}_{l}(\vec{\omega})f^{m}_{l}
+\end{equation}
+Funkcje niskiej częstotliwości mogą być dobrze aproksymowane za pomocą tylko kilku pasm, a wraz ze wzrostem liczby współczynników, sygnały o wyższej częstotliwości mogą przybliżane dokładniej.
+
+Często wygodnie jest przeformułować schemat indeksowania tak aby wykorzystywał pojedynczy parametr $i=l(l+1)+m$. Przy tej konwencji łatwo zauważyć, że przybliżenie n-tego rzędu może zostać zrekonstruowane przy użyciu $n^2$ współczynników.
+
+\bigskip
+\textcolor{red}{zrobić rysuneczki z przykładowymi kształtami itp ..}
+
+
+\subsection{Parametryzacja Modify Funny Hills}
+
+opisać
+
+zrobić rysuneczki z przykładowymi kształtami itp ..
+
+\subsection{Przeliczanie jednego w drugą}
+
+Wziąć z pracy Mollera ze str 4 (rozdział Multipole expansion) - to jest detoda za pomocą całki
+
+napisać, że można też to zrobić metodą najmniejszych kwadratów
+
+\section{Wyniki}
+
+\subsection{efekt przeliczania u nas}
+
+pokazanie nałożonych kształtów w 2 parametryzacjach
+
+\subsection{wyniki wyznaczania mas}
+
+opisać jaka była siatka w funny w ramach której poszukiwano mas
+
+ogarnięto tak 3 kolejne jądra dla których szczegółowe wyniki są poniżej
+
+\subsubsection{Uran}
+mapki i porównanie z exp .. 
+
+\subsubsection{Radon}
+mapki i porównanie z exp .. 
+
+\subsubsection{Z=123}
+mapki i porównanie z exp .. 
+
+
+\section{Wnioski}
+
+że 0.5 MeV różnicy względem exp to na prawdę dobry wynik
+
+funny i harmoniki dają to samo, więc funny jest ok
+
+
+\end{document}

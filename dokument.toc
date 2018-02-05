@@ -1,0 +1,19 @@
+\select@language {polish}
+\contentsline {section}{\numberline {1}Wprowadzenie}{3}
+\contentsline {section}{\numberline {2}Model mikroskopowo-makroskopowy}{3}
+\contentsline {subsection}{\numberline {2.1}Cz\IeC {\k e}\IeC {\'s}\IeC {\'c} makroskopowa energii}{3}
+\contentsline {subsection}{\numberline {2.2}Cz\IeC {\k e}\IeC {\'s}\IeC {\'c} mikroskopowa energii}{4}
+\contentsline {subsubsection}{\numberline {2.2.1}Potencja\IeC {\l } Woodsa-Saxona}{4}
+\contentsline {subsubsection}{\numberline {2.2.2}Poprawka pow\IeC {\l }okowa}{4}
+\contentsline {subsubsection}{\numberline {2.2.3}Poprawka pairing}{4}
+\contentsline {section}{\numberline {3}Parametryzacja kszta\IeC {\l }tu j\IeC {\k a}dra atomowego}{5}
+\contentsline {subsection}{\numberline {3.1}Harmoniki sferyczne}{5}
+\contentsline {subsection}{\numberline {3.2}Parametryzacja Modify Funny Hills}{7}
+\contentsline {subsection}{\numberline {3.3}Przeliczanie jednego w drug\IeC {\k a}}{7}
+\contentsline {section}{\numberline {4}Wyniki}{7}
+\contentsline {subsection}{\numberline {4.1}efekt przeliczania u nas}{7}
+\contentsline {subsection}{\numberline {4.2}wyniki wyznaczania mas}{7}
+\contentsline {subsubsection}{\numberline {4.2.1}Uran}{7}
+\contentsline {subsubsection}{\numberline {4.2.2}Radon}{7}
+\contentsline {subsubsection}{\numberline {4.2.3}Z=123}{7}
+\contentsline {section}{\numberline {5}Wnioski}{7}
