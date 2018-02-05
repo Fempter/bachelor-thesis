@@ -8,10 +8,10 @@
 \contentsline {subsubsection}{\numberline {2.2.3}Poprawka pairing}{4}
 \contentsline {section}{\numberline {3}Parametryzacja kszta\IeC {\l }tu j\IeC {\k a}dra atomowego}{5}
 \contentsline {subsection}{\numberline {3.1}Harmoniki sferyczne}{5}
-\contentsline {subsection}{\numberline {3.2}Parametryzacja Modify Funny Hills}{7}
+\contentsline {subsection}{\numberline {3.2}Parametryzacja Modify Funny-Hills}{7}
 \contentsline {subsection}{\numberline {3.3}Przeliczanie jednego w drug\IeC {\k a}}{8}
-\contentsline {section}{\numberline {4}Wyniki}{8}
-\contentsline {subsection}{\numberline {4.1}efekt przeliczania u nas}{8}
+\contentsline {section}{\numberline {4}Wyniki}{9}
+\contentsline {subsection}{\numberline {4.1}efekt przeliczania u nas}{9}
 \contentsline {subsection}{\numberline {4.2}wyniki wyznaczania mas}{9}
 \contentsline {subsubsection}{\numberline {4.2.1}Uran}{9}
 \contentsline {subsubsection}{\numberline {4.2.2}Radon}{9}
