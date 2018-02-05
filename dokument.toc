@@ -9,11 +9,11 @@
 \contentsline {section}{\numberline {3}Parametryzacja kszta\IeC {\l }tu j\IeC {\k a}dra atomowego}{5}
 \contentsline {subsection}{\numberline {3.1}Harmoniki sferyczne}{5}
 \contentsline {subsection}{\numberline {3.2}Parametryzacja Modify Funny Hills}{7}
-\contentsline {subsection}{\numberline {3.3}Przeliczanie jednego w drug\IeC {\k a}}{7}
-\contentsline {section}{\numberline {4}Wyniki}{7}
-\contentsline {subsection}{\numberline {4.1}efekt przeliczania u nas}{7}
-\contentsline {subsection}{\numberline {4.2}wyniki wyznaczania mas}{7}
-\contentsline {subsubsection}{\numberline {4.2.1}Uran}{7}
-\contentsline {subsubsection}{\numberline {4.2.2}Radon}{7}
-\contentsline {subsubsection}{\numberline {4.2.3}Z=123}{7}
-\contentsline {section}{\numberline {5}Wnioski}{7}
+\contentsline {subsection}{\numberline {3.3}Przeliczanie jednego w drug\IeC {\k a}}{8}
+\contentsline {section}{\numberline {4}Wyniki}{8}
+\contentsline {subsection}{\numberline {4.1}efekt przeliczania u nas}{8}
+\contentsline {subsection}{\numberline {4.2}wyniki wyznaczania mas}{8}
+\contentsline {subsubsection}{\numberline {4.2.1}Uran}{8}
+\contentsline {subsubsection}{\numberline {4.2.2}Radon}{8}
+\contentsline {subsubsection}{\numberline {4.2.3}Z=123}{8}
+\contentsline {section}{\numberline {5}Wnioski}{8}
