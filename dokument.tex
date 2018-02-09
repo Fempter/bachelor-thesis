@@ -283,7 +283,7 @@ f(\vec{\omega})=\sum_{l=0}^{\infty}\sum_{m=-l}^{l}y^{m}_{l}(\vec{\omega})f^{m}_{
 \end{equation}
 gdzie współczynnik $f$ jest obliczony przez rzutowanie $f$ funkcję podstawową $y^{m}_{l}$:
 \begin{equation}
-f^{m}_{l}=\int_{\Omega_{4\pi}}^{}y^{m}_{l}(\vec{\omega})f(\vec{\omega})d\vec{\omega}
+f^{m}_{l}=\int_{\Omega_{4\pi}}^{}y^{m}_{l}(\vec{\omega})f(\vec{\omega})\mathrm{d}\vec{\omega}
 \end{equation}
 Podobnie jak w przypadku szeregu Fouriera, rozszerzenie to jest prawdziwe, kiedy $l$ dąży do nieskończoności, wymaga to jednak nieskończonej liczby współczynników. Ograniczając liczbę pasm do $l=n-1$, zachowujemy tylko częstotliwość funkcji do pewnego momentu, uzyskując przybliżone pasma funkcji~$\tilde{f}$ n-tego rzędu pierwotnej funkcji $f$:
 \begin{equation}
@@ -368,6 +368,20 @@ Niestety wydłużenie, asymetria masowa i parametry szyi nie są wystarczające,
 
 \subsection{Przeliczanie jednego w drugą}
 
+Jedną z powszechnie stosowanych parametryzacji kształtów jądrowych jest parametryzacja $\beta$. Jest to rozszerzenie wektora promienia w sferycznych harmonicznych:
+\begin{equation}
+r(\theta,\phi)=R_{0}\left(1+\sum_{l=1}^{\infty}\sum_{m=-l}^{l}\beta_{lm}Y^{m}_{l}\right),
+\end{equation}
+gdzie $R_{0}$ jest zależne od deformacji w celu zachowania objętości wewnątrz powierzchni jądrowej. Gdy rozważane są tylko kształty osiowo symetryczne, oznaczenie $\beta_{l}$ jest zwykle używane dla $\beta_{l0}$. Ponieważ sferyczne harmoniczne $Y^{m}_{l}$ są ortogonalne, można określić parametry $\beta$ odpowiadające dowolnemu kształtowi zdefiniowanemu przez wektor promienia $r(\theta,\phi)$ w dowolnej parametryzacji, w tym parametryzacji $\epsilon$, przez zastosowanie
+\begin{equation}
+\beta_{lm}=\sqrt{4\pi}\frac{\int r(\theta,\phi)Y^{m}_{l}(\theta,\phi)\mathrm{d}\Omega}{\int r(\theta,\phi)Y^{0}_{0}(\theta,\phi)\mathrm{d}\Omega},
+\end{equation}
+gdzie $r$ jest wektorem promienia w innych parametryzacjach. Parametry $\beta$ wyższego rzędu odpowiadające określonemu kształtowi w parametryzacji $\epsilon$ są na ogół niezerowe, nawet jeśli parametry $\epsilon$ wyższego rzędu są równe zeru. Kształt w parametryzacji $\epsilon$, dla której $\epsilon_{2}\neq0$ oraz wszystkie wyższe $\epsilon$ są zerowe, jest czystym sferoidem, i odwrotnie, kształt o tylko $\beta_{2}=0$ nie jest czystym sferoidem.
+
+Korzystamy z osiowo symetrycznej parametryzacji $\beta$ do obliczania ograniczonych, jednowymiarowych krzywych bariery rozszczepienia, które są wykreślane w funkcji momentu kwadrupolowego ładunku $Q_{2}$.
+
+
+\bigskip
 Wziąć z pracy Mollera ze str 4 (rozdział Multipole expansion) - to jest metoda za pomocą całki
 
 napisać, że można też to zrobić metodą najmniejszych kwadratów
