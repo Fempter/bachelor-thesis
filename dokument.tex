@@ -21,6 +21,7 @@
 \usepackage{setspace}
 \usepackage[nottoc,numbib]{tocbibind}
 \usepackage[hidelinks]{hyperref} % for \texorpdfstring
+\usepackage[bottom]{footmisc}
 
 \usepackage{cite}  %added by P.J.
 
@@ -81,7 +82,7 @@
 	{\scshape\LARGE Wydział Fizyki i Astronomii \par}
 	{\scshape\Large Instytut Fizyki \par}
 	\vspace{1.5cm}
-	{\Large\bfseries Wyznaczanie mas dla stanów podstawowych ciężkich jąder atomowych w ramach modelu makroskopowo-mikroskopowego z wykorzystaniem parametryzacji modif{}ied Funny-Hills. \par}
+	{\Large\bfseries Wyznaczanie mas dla stanów podstawowych ciężkich jąder atomowych w ramach modelu makroskopowo-mikroskopowego z wykorzystaniem parametryzacji modif{}ied Funny-Hills \par}
 	\vspace{1cm}
 	{\Large\textbf{Dawid Haniewicz} \par}
 	\vspace{2cm}
@@ -106,35 +107,16 @@
 \tableofcontents
 \clearpage
 
-%\chapter{po angielsku}
-%To describe the ground state shapes and not very elon-
-%gated fission barriers particularly frequently expansion in
-%spherical harmonics has been used. This allows to in-
-%clude a mixing of various multipolarities when considering
-%exotic shapes. On the other hand the more elongated
-%shapes the more independent parameters should be taken
-%into account.
-
-
-
-%{ \LARGE
-
-%Tematem pracy jest ... 
-%\\
-
-%The aim of the bachelor's thesis is ... 
-%}
-
-\section{Streszczenie pracy - Abstract of thesis}
+\section{Streszczenie pracy - Thesis abstract}
 
 Tematem pracy jest sprawdzenie działania parametryzacji modified Funny-Hills w opisie deformacji i mas stanów podstawowych wybranych ciężkich jąder atomowych. Masa danego nuklidu wyznaczana jest w ramach podejścia makroskopowo-mikroskopowego, w którym część makroskopową stanowi model Yukawa-plus-exponential, dostosowany do opisu zwłaszcza najcięższych jąder atomowych, tj. charakteryzujących się liczbą protonów powyżej $Z=81$. Część mikroskopowa to~poprawka powłokowa Strutińskiego wyznaczana w oparciu o poziomy jednocząstkowe wykorzystywanego potencjału Woodsa-Saxona.
 
 Badana parametryzacja przeznaczona jest do opisu znacznych wydłużeń, tj. kształtów bliskich rozszczepieniu, jednakże wyniki uzyskane w ramach niniejszej pracy pokazują, że w przypadku wybranych jąder, tj. $^{222}Rn$, $^{238}U$ i $^{296}123$, sprawdza się ona bardzo dobrze także przy niewielkich odkształceniach, odpowiadających okolicom stanów podstawowych. Rezultat ten wskazuje, że parametryzacja modified Funny-Hills z powodzeniem może być używana w rachunkach mas stanów podstawowych, pozwalając na wykonywanie obliczeń z wykorzystaniem znacznie mniejszej liczby parametrów deformacji, niż np. w przypadku powszechnie używanej w tym celu parametryzacji beta.
 \\
 
-The theme of this presentation is to check the operation of modified Funny-Hills parameterization in the description of deformations and basic masses of selected heavy atomic nuclei. The mass of a given nuclide is determined within the macroscopic-microscopic approach, in which the macroscopic part is the Yukawa-plus-exponential model, adjusted to the description, especially, of the heaviest atomic nuclei, i.e. those characterized by the number of protons above $Z=81$. The microscopic part is a Strutinski coating correction determined on the basis of monoparticle levels of Woods-Saxon's potential.
+The theme of this work is to check the operation of modified Funny-Hills parameterization in the description of deformations and ground-state masses of selected heavy atomic nuclei. The mass of a given nucleus is determined within the macroscopic-microscopic approach, in which the macroscopic part is the Yukawa-plus-exponential model, adjusted to the description, especially, of the heaviest atomic nuclei, i.e. those characterized by the number of protons above $Z=81$. The microscopic part is the Strutiński shell correction, based on the Woods-Saxon single-particle potential.
 
-The examined parameterization is designed to describe significant elongations, i.e. shapes close to fission, however the results obtained during this study show that for selected testicles, i.e. $^{222}Rn$, $^{238}U$ i $^{296}123$, it works very well even for slight deformations, corresponding to the area of basic states. This indicates that the modified Funny-Hills parameterization can successfully be used for basic state mass computations, allowing calculations to be made using far fewer deformation parameters than, for example, the commonly used beta parameterization.
+The examined parameterization is designed to describe significant elongations, i.e. shapes close to fission, however the results obtained in this study show that for selected nuclei, i.e. $^{222}Rn$, $^{238}U$ i $^{296}123$, it works very well even for slight deformations, corresponding to the region of the ground states. This indicates that the modified Funny-Hills parameterization can successfully be used to calculate ground-state masses, allowing calculations to be made using far fewer deformation parameters than, for example, the commonly used beta parameterization.
 
 
 \clearpage
@@ -543,7 +525,7 @@ Postępując w sposób opisany powyżej i bazując na analizie rzutów energii p
 \begin{equation*}
 c=1,20, \quad h=-0,10, \quad \alpha=0,00, \quad \eta= 0,00
 \end{equation*}
-przy odpowiadającej mu masie równej $M=47,585~\mathrm{MeV}$. Zgodnie z danymi eksperymentalnymi, np. \cite{brookhaven}, zmierzona masa tego jądra w stanie podstawowym jest równa $47,308~\mathrm{MeV}$. Otrzymany przeze mnie wynik jest więc nieznacznie zawyżony względem wartości eksperymentalnej i różni się od niej o $277~\mathrm{keV}$. Warto także zauważyć, że do tak dokładnego wyznaczenia masy w stanie podstawowym tego jądra wystarczyły tu tylko dwie zmienne w parametryzacji \mbox{modified Funny-Hills}, \mbox{tj. $c$ oraz $h$}, podczas gdy np. w standardowym rozwinięciu w harmoniki sferyczne wymagane byłoby tu użycie co najmniej 4 parametrów $\beta_{\lambda \mu}$, tj. $\beta_{20},\beta_{40},\beta_{60},\beta_{80}$, np. \cite{JACHBF}.
+przy odpowiadającej mu masie równej $M=47,585~\mathrm{MeV}$\footnote{Wszystkie masy analizowane w ramach niniejszej pracy podawane są w postaci tzw. odchylenia masy, czyli różnicy między masą danego jądra a odpowiadającą mu liczbą nukleonów A.}. Zgodnie z danymi eksperymentalnymi, np. \cite{brookhaven}, zmierzona masa tego jądra w stanie podstawowym jest równa $47,308~\mathrm{MeV}$. Otrzymany przeze mnie wynik jest więc nieznacznie zawyżony względem wartości eksperymentalnej i różni się od niej o $277~\mathrm{keV}$. Warto także zauważyć, że do tak dokładnego wyznaczenia masy w stanie podstawowym tego jądra wystarczyły tu tylko dwie zmienne w parametryzacji \mbox{modified Funny-Hills}, \mbox{tj. $c$ oraz $h$}, podczas gdy np. w standardowym rozwinięciu w harmoniki sferyczne wymagane byłoby tu użycie co najmniej 4 parametrów $\beta_{\lambda \mu}$, tj. $\beta_{20},\beta_{40},\beta_{60},\beta_{80}$, np. \cite{JACHBF}.
 
 
 \begin{figure}[h!]
