@@ -1,11 +1,11 @@
-\documentclass[a4paper,polish]{article}
+\documentclass[a4paper,polish,twoside]{article}
 
 %\newcommand{\DoNotLoadEpstopdf}{}
 
 \usepackage[T1]{fontenc}
 \usepackage{polski}
 \usepackage[polish]{babel}
-\usepackage[margin=3cm]{geometry}
+\usepackage[bindingoffset=2cm,centering,includeheadfoot,margin=2cm,top=1.7cm,bottom=2cm,footskip=1.4cm]{geometry}
 \usepackage{graphicx}
 \usepackage[utf8]{inputenc}
 \usepackage{hyphenat}
@@ -103,9 +103,13 @@
 
 \setcounter{page}{2}
 
+\newgeometry{twoside}
+
 \clearpage
 \tableofcontents
 \clearpage
+
+\newgeometry{twoside,bindingoffset=2cm,centering,includeheadfoot,margin=2cm,top=1.7cm,bottom=2cm,footskip=1.4cm}
 
 \section{Streszczenie pracy - Thesis abstract}
 
@@ -114,9 +118,9 @@ Tematem pracy jest sprawdzenie działania parametryzacji modified Funny-Hills w 
 Badana parametryzacja przeznaczona jest do opisu znacznych wydłużeń, tj. kształtów bliskich rozszczepieniu, jednakże wyniki uzyskane w ramach niniejszej pracy pokazują, że w przypadku wybranych jąder, tj. $^{222}Rn$, $^{238}U$ i $^{296}123$, sprawdza się ona bardzo dobrze także przy niewielkich odkształceniach, odpowiadających okolicom stanów podstawowych. Rezultat ten wskazuje, że parametryzacja modified Funny-Hills z powodzeniem może być używana w rachunkach mas stanów podstawowych, pozwalając na wykonywanie obliczeń z wykorzystaniem znacznie mniejszej liczby parametrów deformacji, niż np. w przypadku powszechnie używanej w tym celu parametryzacji beta.
 \\
 
-The theme of this work is to check the operation of modified Funny-Hills parameterization in the description of deformations and ground-state masses of selected heavy atomic nuclei. The mass of a given nucleus is determined within the macroscopic-microscopic approach, in which the macroscopic part is the Yukawa-plus-exponential model, adjusted to the description, especially, of the heaviest atomic nuclei, i.e. those characterized by the number of protons above $Z=81$. The microscopic part is the Strutiński shell correction, based on the Woods-Saxon single-particle potential.
+The topic of this work is to check the operation of modified Funny-Hills parameterization in the description of deformations and ground-state masses of selected heavy atomic nuclei. The mass of a given nucleus is determined within the macroscopic-microscopic approach, in which the macroscopic part is the Yukawa-plus-exponential model, adjusted to the description, especially, of the heaviest atomic nuclei, i.e. those characterized by the number of protons above $Z=81$. The microscopic part is the Strutiński shell correction, based on the Woods-Saxon single-particle potential.
 
-The examined parameterization is designed to describe significant elongations, i.e. shapes close to fission, however the results obtained in this study show that for selected nuclei, i.e. $^{222}Rn$, $^{238}U$ i $^{296}123$, it works very well even for slight deformations, corresponding to the region of the ground states. This indicates that the modified Funny-Hills parameterization can successfully be used to calculate ground-state masses, allowing calculations to be made using far fewer deformation parameters than, for example, the commonly used beta parameterization.
+The examined parameterization is designed to describe significant elongations, i.e. shapes close to fission, however the results obtained in this study show that for the selected nuclei, i.e. $^{222}Rn$, $^{238}U$ i $^{296}123$, it works very well even for slight deformations, corresponding to the region of the ground states. This indicates that the modified Funny-Hills parameterization can successfully be used to calculate ground-state masses, allowing calculations to be made using far fewer deformation parameters than, for example, the commonly used beta parameterization.
 
 
 \clearpage
@@ -126,12 +130,12 @@ W chwili obecnej znanych jest około 3000 jąder atomowych z czego większość 
 
 Umiejętność opisu jądrowej deformacji ma fundamentalne znaczenie dla odtwarzania i przewidywania wielu własności jądrowych, zarówno tych strukturalnych jak i spektroskopowych. Opisu tego dokonuje się poprzez wybór odpowiedniej parametryzacji, tj. poprzez rozwinięcie powierzchni jądra w skończony szereg liczb, tak aby możliwym było wykorzystanie ich jako zmiennych w obliczeniach numerycznych. Historycznie pierwsza taka parametryzacja, polegająca na uzależnieniu energii wiązania od kształtu nuklidu, wprowadzona została przez N. Bora i J. Wheelera w~1939~r. \cite{1939} i była następstwem odkrycia zjawiska rozszczepienia uranu. Od tego czasu wprowadzono wiele różnych parametryzacji, np. \cite{parametryzacje}, dostosowanych do konkretnych typów zjawisk lub obszarów nuklidów. Wybór odpowiedniej z nich powinien być uzasadniany przede wszystkim typem kształtów mogących mieć znaczenie w badanym obszarze nuklidów, lecz i także możliwie dużą prostotą obliczeń.
 
-W przypadku jąder najcięższych, dla których duża liczba protonów i związane z tym odpychanie kulombowskie zasadniczo uniemożliwia zbytnie odejście od kształtów sferycznych, stosunkowo dobrą parametryzację stanowi rozwinięcie powierzchni jądra w szereg funkcji kulistych - tj. tzw. parametryzacja $\beta$. Ze względów numerycznych taki szereg powinien być oczywiście skończony. W praktyce jest to równoznaczne z wybraniem z niego tylko pewnych typów kształtów, przy założeniu, że są one ,,najważniejsze'' oraz na odrzuceniu pozostałych, uznawanych za mniej ważne. Mimo oczywistych wad opisana parametryzacja bardzo dobrze sprawdza się np. w przypadku wyznaczania mas/energii stanów podstawowych, natomiast w przypadku znacznego odejścia od sfery, np.~próbach opisu jąder charakteryzujących się długimi barierami rozszczepieniowymi, parametryzacja ta może wymagać uwzględnienia wielu typów kształtów (tj. stopni swobody), utrudniając tym samym obliczenia \cite{Jach1}, lub czyniąc je nawet niemożliwymi do wykonania w sposób rzetelny. Ratunkiem w tej sytuacji może być użycie innej parametryzacji, np. tzw. parametryzacji modified Funny-Hills, wprowadzonej przez K. Pomorskiego i J. Bartela \cite{MFH}, stanowiącej rozwinięcie parametryzacji Funny-Hills \cite{OLDMFH} i wykorzystującej tylko cztery odpowiednio dobrane parametry: $c, h, \alpha, \eta$, których znaczenie i sens fizyczny omówione zostaną w dalszej części pracy. Parametryzacja ta nadaje się zarówno do opisu kształtów charakteryzujących się znacznym wydłużeniem, lecz i także, zgodnie z twierdzeniem autorów \cite{MFH}, do opisu kształtów bliskich sfery, tj. np. wyznaczania energii/mas dla stanów podstawowych.
+W przypadku jąder najcięższych, dla których duża liczba protonów i związane z tym odpychanie kulombowskie zasadniczo uniemożliwia zbytnie odejście od kształtów sferycznych, stosunkowo dobrą parametryzację stanowi rozwinięcie powierzchni jądra w szereg funkcji kulistych - tj. tzw. parametryzacja $\beta$. Ze względów numerycznych taki szereg powinien być oczywiście skończony. W~praktyce jest to równoznaczne z wybraniem z niego tylko pewnych typów kształtów, przy założeniu, że są one ,,najważniejsze'' oraz na odrzuceniu pozostałych, uznawanych za mniej ważne. Mimo oczywistych wad opisana parametryzacja bardzo dobrze sprawdza się np. w przypadku wyznaczania mas/energii stanów podstawowych, natomiast w przypadku znacznego odejścia od sfery, np.~próbach opisu jąder charakteryzujących się długimi barierami rozszczepieniowymi, parametryzacja ta może wymagać uwzględnienia wielu typów kształtów (tj. stopni swobody), utrudniając tym samym obliczenia \cite{Jach1}, lub czyniąc je nawet niemożliwymi do wykonania w sposób rzetelny. Ratunkiem w tej sytuacji może być użycie innej parametryzacji, np. tzw. parametryzacji modified Funny-Hills, wprowadzonej przez K. Pomorskiego i J. Bartela \cite{MFH}, stanowiącej rozwinięcie parametryzacji Funny-Hills \cite{OLDMFH} i wykorzystującej tylko cztery odpowiednio dobrane parametry: $c, h, \alpha, \eta$, których znaczenie i sens fizyczny omówione zostaną w dalszej części pracy. Parametryzacja ta nadaje się zarówno do opisu kształtów charakteryzujących się znacznym wydłużeniem, lecz i także, zgodnie z twierdzeniem autorów \cite{MFH}, do opisu kształtów bliskich sfery, tj. np. wyznaczania energii/mas dla stanów podstawowych.
 
 \clearpage
 \subsection{Cel pracy oraz sposób jego realizacji}
 
-Celem niniejszej pracy jest więc sprawdzenie działania parametryzacji modified Funny-Hills w opisie energii/mas dla stanów podstawowych wybranych nuklidów. Warto w tym miejscu wspomnieć, że nie każda parametryzacja dobrze sprawdzająca się w opisie kształtów silnie wydłużonych, tj. bliskich rozszczepieniu, nadaje się także do opisu niewielkich wydłużeń. Przykładem tego może być tzw. parametryzacja three quadratic surfaces, wprowadzona przez J. R. Nixa \cite{NIX}, która w~przypadku niewielkich deformacji prowadzi do znacznych błędów i jest najczęściej zastępowana parametryzacją $\beta$, np. \cite{Moll2009}.
+Celem niniejszej pracy jest więc sprawdzenie działania parametryzacji modified Funny-Hills w~opisie energii/mas dla stanów podstawowych wybranych nuklidów. Warto w tym miejscu wspomnieć, że nie każda parametryzacja dobrze sprawdzająca się w opisie kształtów silnie wydłużonych, tj. bliskich rozszczepieniu, nadaje się także do opisu niewielkich wydłużeń. Przykładem tego może być tzw. parametryzacja three quadratic surfaces, wprowadzona przez J. R. Nixa \cite{NIX}, która w~przypadku niewielkich deformacji prowadzi do znacznych błędów i jest najczęściej zastępowana parametryzacją $\beta$, np. \cite{Moll2009}.
 
 Samo wyznaczanie energii/mas jądrowych w niniejszej pracy opierać się będzie na tzw. modelu makroskopowo-mikroskopowym, który szczegółowo opisany został w następnym rozdziale. Model ten z powodzeniem wykorzystywany jest już od wielu lat do opisu różnego rodzaju własności jądrowych, np. \cite{JACHQ,JACHBF,Muntian}, a odpowiadający mu kod numeryczny, który będę tu wykorzystywał, opiera się na parametryzacji $\beta$. Ponieważ przepisanie wspomnianego kodu na inną parametryzację znacznie przekracza zakres pracy inżynierskiej, sprawdzenie działania parametryzacji modified Funny-Hills opierać się tu będzie na umiejętnym i bardzo precyzyjnym przeliczeniu wygenerowanego w ramach jej kształtu (definiowanego przez parametry $c, h, \alpha, \eta$),  na parametryzację $\beta$, tak aby możliwe było użycie wspomnianego kodu numerycznego (tj. modelu makroskopowo-mikroskopowego), bez potrzeby wprowadzania do niego większych modyfikacji. Szczegółowy opis sposobu przeliczania parametryzacji modified Funny-Hills na parametryzację $\beta$ znajduje się na końcu rozdziału 3 niniejszej pracy.
 
@@ -173,7 +177,6 @@ k_{F}=\left(\frac{9\pi Z}{4A}\right)^{1/3}r^{-1}_{0},
 \end{equation}
 natomiast $r_{p}$ jest średnią kwadratową promienia protonu. \\
 Poszczególne parametry używane w niniejszym modelu przyjęto zgodnie z \cite{Moll1,Moll2} i mają one następujące wartości:
-
 \begin{alignat*}{4}
 a_s&=21,13~\mathrm{MeV}, \qquad \kappa_{s}&&=2,30, \qquad a_{el}=1,433 \cdot 10^{-5}~\mathrm{MeV}, &&\\
 a_{den}&=0,70~\mathrm{fm}, \qquad \qquad a&&=0,68~\mathrm{fm},
@@ -451,9 +454,9 @@ $\beta_{90}=-0,008$& $\beta_{10 \,\, 0}= 0,007$ & $\beta_{11 \,\, 0}=-0,008$ &  
 \noindent
 i zaznaczony na rys.~\ref{osiowy} za pomocą czerwonych kropek. Widać, że konwersja oparta na metodzie (\ref{przeliczanie}) działa w tym przypadku właściwie, gdyż oba przekroje widoczne na rys.~\ref{osiowy} pokrywają się z dużą dokładnością. Dodatkowo można także zauważyć, że zgodnie z oczekiwaniem, wszystkie wyznaczone tu $\beta_{\lambda \mu}$ z  $\mu \neq 0$ są równe $0$ ze względu na przyjęcie $\eta=0$.
 
-\begin{figure}[ht!]
+\begin{figure}[h!]
 \centering
-\includegraphics[height=7.75cm]{axial.eps}
+\includegraphics[height=7.65cm]{axial.eps}
 \caption{Przykład konwersji kształtu osiowosymetrycznego w przekroju $\{y-z\}$ z parametryzacji modified Funny-Hills (MFH), oznaczonego niebieską linią, do kształtu w parametryzacji $\beta$ (SPH), oznaczonego czerwonymi kropkami.}
 \label{osiowy}
 \end{figure}
@@ -507,7 +510,7 @@ wśród których wiele $\beta_{\lambda \mu}$ charakteryzujących się $\mu \neq 
 \clearpage
 \subsection{Obliczenia mas dla stanów podstawowych}
 
-Opisana powyżej umiejętność dokładnego przeliczania kształtu zdefiniowanego w parametryzacji modified Funny-Hills na parametryzację $\beta$, umożliwiła mi wyznaczanie energii/masy danego jądra dla dowolnie przyjętych parametrów $c$, $h$, $\alpha$, $\eta$, wykorzystując opisany w rozdziale 2 model makroskopowo-mikroskopowy, którego numeryczna implementacja opiera się właśnie na parametryzacji $\beta$. Ponieważ celem mojej pracy było zbadanie czy parametryzacja modified Funny-Hills dobrze sprawdzi się przy wyznaczaniu mas/energii stanów podstawowych, jako kandydatów do testów wybrałem trzy jądra, z których dwa tj. $^{238}U$, $^{222}Rn$ są stosunkowo dobrze znane eksperymentalnie, natomiast trzecie $^{173}123$ nie zostało jak dotąd zaobserwowane. Jądro $^{238}U$ wybrałem ze względu na oczekiwany, np. zgodnie z \cite{RIPL3}, niewielki stopień komplikacji jego kształtu w stanie podstawowym, tj. nieduża deformacja kwadrupolowa z domieszką deformacji hexadekapolowej. Jądro $^{222}Rn$ oprócz wymienionych dla $^{238}U$ dwóch głównych typów deformacji powinno dodatkowo charakteryzować się w stanie podstawowym niezerową deformacją oktupolową, ze względu na rezultaty licznych eksperymentów takich jak np. \cite{E3}. Ostatnie hipotetyczne jądro $^{173}123$, zgodnie z przewidywaniami \cite{A32}, powinno charakteryzować się w stanie podstawowym bardzo egzotycznym kształtem, przypominającym spłaszczony sferoid o lekko trójkątnym równiku. 
+Opisana powyżej umiejętność dokładnego przeliczania kształtu zdefiniowanego w parametryzacji modified Funny-Hills na parametryzację $\beta$, umożliwiła mi wyznaczanie energii/masy\footnote{Wszystkie masy analizowane w ramach niniejszej pracy podawane są w postaci tzw. odchylenia masy, czyli różnicy między masą danego jądra a odpowiadającą mu liczbą nukleonów A.} danego jądra dla dowolnie przyjętych parametrów $c$, $h$, $\alpha$, $\eta$, wykorzystując opisany w rozdziale 2 model makroskopowo-mikroskopowy, którego numeryczna implementacja opiera się właśnie na parametryzacji $\beta$. Ponieważ celem mojej pracy było zbadanie czy parametryzacja modified Funny-Hills dobrze sprawdzi się przy wyznaczaniu mas/energii stanów podstawowych, jako kandydatów do testów wybrałem trzy jądra, z których dwa tj. $^{238}U$, $^{222}Rn$ są stosunkowo dobrze znane eksperymentalnie, natomiast trzecie $^{173}123$ nie zostało jak dotąd zaobserwowane. Jądro $^{238}U$ wybrałem ze względu na oczekiwany, np. zgodnie z \cite{RIPL3}, niewielki stopień komplikacji jego kształtu w stanie podstawowym, tj. nieduża deformacja kwadrupolowa z domieszką deformacji hexadekapolowej. Jądro $^{222}Rn$ oprócz wymienionych dla $^{238}U$ dwóch głównych typów deformacji powinno dodatkowo charakteryzować się w stanie podstawowym niezerową deformacją oktupolową, ze względu na rezultaty licznych eksperymentów takich jak np. \cite{E3}. Ostatnie hipotetyczne jądro $^{173}123$, zgodnie z przewidywaniami \cite{A32}, powinno charakteryzować się w stanie podstawowym bardzo egzotycznym kształtem, przypominającym spłaszczony sferoid o lekko trójkątnym równiku. 
 
 Aby w ramach parametryzacji modified Funny-Hills wyznaczyć energie/masy w stanach podstawowych wymienionych jąder, oraz deformacje takich punktów, należy znaleźć minimum energii danego jądra, leżące przed odpowiadającą mu barierą rozszczepieniową, względem parametrów $c$,~$h$,~$\alpha$,~$\eta$. Wykorzystać w tym celu można dowolną procedurę minimalizacyjną, lub posłużyć się siecią energii potencjalnej (w tym przypadku 4-wymiarową, zależną od $c$, $h$, $\alpha$, $\eta$) i znaleźć na niej odpowiednie minimum. W niniejszej pracy wykorzystałem drugą z wymienionych metod i dla każdego z trzech wybranych do testu jąder wygenerowałem sieć energii potencjalnej o następujących zakresach w poszczególnych parametrach deformacji:
 \begin{align*}
@@ -525,10 +528,10 @@ Postępując w sposób opisany powyżej i bazując na analizie rzutów energii p
 \begin{equation*}
 c=1,20, \quad h=-0,10, \quad \alpha=0,00, \quad \eta= 0,00
 \end{equation*}
-przy odpowiadającej mu masie równej $M=47,585~\mathrm{MeV}$\footnote{Wszystkie masy analizowane w ramach niniejszej pracy podawane są w postaci tzw. odchylenia masy, czyli różnicy między masą danego jądra a odpowiadającą mu liczbą nukleonów A.}. Zgodnie z danymi eksperymentalnymi, np. \cite{brookhaven}, zmierzona masa tego jądra w stanie podstawowym jest równa $47,308~\mathrm{MeV}$. Otrzymany przeze mnie wynik jest więc nieznacznie zawyżony względem wartości eksperymentalnej i różni się od niej o $277~\mathrm{keV}$. Warto także zauważyć, że do tak dokładnego wyznaczenia masy w stanie podstawowym tego jądra wystarczyły tu tylko dwie zmienne w parametryzacji \mbox{modified Funny-Hills}, \mbox{tj. $c$ oraz $h$}, podczas gdy np. w standardowym rozwinięciu w harmoniki sferyczne wymagane byłoby tu użycie co najmniej 4 parametrów $\beta_{\lambda \mu}$, tj. $\beta_{20},\beta_{40},\beta_{60},\beta_{80}$, np. \cite{JACHBF}.
+przy odpowiadającej mu masie równej $M=47,585~\mathrm{MeV}$. Zgodnie z danymi eksperymentalnymi, np. \cite{brookhaven}, zmierzona masa tego jądra w stanie podstawowym jest równa $47,308~\mathrm{MeV}$. Otrzymany przeze mnie wynik jest więc nieznacznie zawyżony względem wartości eksperymentalnej i różni się od niej o $277~\mathrm{keV}$. Warto także zauważyć, że do tak dokładnego wyznaczenia masy w stanie podstawowym tego jądra wystarczyły tu tylko dwie zmienne w parametryzacji \mbox{modified Funny-Hills}, \mbox{tj. $c$ oraz $h$}, podczas gdy np. w standardowym rozwinięciu w harmoniki sferyczne wymagane byłoby tu użycie co najmniej 4 parametrów $\beta_{\lambda \mu}$, tj. $\beta_{20},\beta_{40},\beta_{60},\beta_{80}$, np. \cite{JACHBF}.
 
 
-\begin{figure}[h!]
+\begin{figure}[ht!]
 \centering
 \includegraphics[height=6.5cm]{238U_c_h.eps}
 \includegraphics[height=6.5cm]{238U_c_alpha.eps}
@@ -547,7 +550,7 @@ c=1,15, \quad h=-0,05, \quad \alpha=0,60, \quad \eta= 0,00,
 oraz odpowiadającą mu masę równą $M=16,769~\mathrm{MeV}$. Tak jak i w przypadku $^{238}U$, otrzymany przeze mnie rezultat jest tu nieznacznie zawyżony w stosunku do wartości eksperymentalnej, wynoszącej $16,372~\mathrm{MeV}$ \cite{brookhaven}. Wynikająca stąd różnica jest zatem równa $397~\mathrm{keV}$. Dodatkowo warto także zauważyć, że zgodnie z opisanymi wcześniej przewidywaniami, kształt tego jądra w stanie podstawowym charakteryzuje się większym stopniem komplikacji niż miało to miejsce w przypadku $^{238}U$, tj. do jego opisu wymagane są tu trzy parametry: $c$, $h$, oraz dodatkowo $\alpha$. 
 
 
-\begin{figure}[h!]
+\begin{figure}[ht!]
 \centering
 \includegraphics[height=6.5cm]{222Rn_c_h.eps}
 \includegraphics[height=6.5cm]{222Rn_c_alpha.eps}
@@ -565,7 +568,7 @@ c=1,05, \quad h= 0,00, \quad \alpha=0,10, \quad \eta= 0,15,
 \end{equation*}
 oraz uzyskana przeze mnie  masa w tym punkcie równa $237,363~\mathrm{MeV}$. Masy tej (z oczywistych względów) nie da się porównać z wynikiem uzyskanym na drodze eksperymentu, jednakże rezultaty zawarte w pracy \cite{A32} wskazują, że uzyskany tu kształt oraz masa w stanie podstawowym wydają się być właściwe. Zgodnie z \cite{A32} kształt ten powinien charakteryzować się niezerową wartością parametrów $c, \alpha$ i $\eta$, przy odpowiadającej im masie w stanie podstawowym równej $237,007~\mathrm{MeV}$. %Dane te są więc w dużej zgodzie z rezultatem otrzymanym przeze mnie. 
 
-\begin{figure}[h!]
+\begin{figure}[ht!]
 \centering
 \includegraphics[height=6.5cm]{296_123_c_h.eps}
 \includegraphics[height=6.5cm]{296_123_c_alpha.eps}
